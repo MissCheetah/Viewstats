@@ -15,7 +15,7 @@ export class ApiService {
     /* Custom getRessources method to construct the get http query with random parameters */
     private getRessources(ressourceName, parameters) {
         let url = APIQueryConstructor.buildGETQuery(ressourceName, parameters);
-        const options = new RequestOptions({ headers: this.headers });
+        const options = new RequestOptions({headers: this.getHeader()});
         return this.http.get(url, options);
     }
 

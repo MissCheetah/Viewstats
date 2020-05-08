@@ -162,7 +162,7 @@ export class ApiService {
     private getRessources(ressourceName, parameters) {
         let url = APIQueryConstructor.buildGETQuery(ressourceName, parameters);
         console.log(url);
-        return this.http.get(url, { headers: this.headers });
+        return this.http.get(url, {headers: this.getHeader()});
     }
 }
 

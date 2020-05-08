@@ -17,12 +17,12 @@ export class CommercantsByAgentCardComponent implements OnInit {
       this.agent_id = agent;
       console.log(this.agent_id);
       this.api.getAgents({"id" : this.agent_id}).subscribe( res => {
-        this.Agent = JSON.parse(res['_body'])[0];
+        this.Agent = res;
         console.log(this.Agent);
       });
       this.api.getCommercants({"agent_id" : this.agent_id}).subscribe( res =>
       {
-        this.CommercantsByAgent = JSON.parse(res['_body']);
+        this.CommercantsByAgent = res;
         console.log(this.CommercantsByAgent);
       },
         error => {
