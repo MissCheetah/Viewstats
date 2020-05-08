@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<ion-content fullscreen >
+  <form (ngSubmit)="logForm()" *ngIf="clear" >
+    <ion-item>
+      <ion-button (click)="uploadImage()" >Changer d'avatar</ion-button>
+      <img src="{{image}}">
+    </ion-item>
+    <ion-item>
+      <ion-label>Email SafeLife : </ion-label>
+      <ion-input type="text" [(ngModel)]="newAgent.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nouveau mot de passe : </ion-label>
+      <ion-textarea [(ngModel)]="newAgent.newPWD" name="newPD"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Précédent mot de passe : </ion-label>
+      <ion-textarea [(ngModel)]="newAgent.prevPWD" name="prevPWD"></ion-textarea>
+    </ion-item>
+
+
+    <button ion-button class="btn btn-primary" type="submit" block></button>
+  </form>
+
+  <div class="added" *ngIf="added">
+    Félicitations ! Votre mot de passe a été modifié.
+    <p> </p>
+    <button ion-button class="btn btn-primary" (click)="refresh()">Retour</button>
+  </div>
+</ion-content>
+

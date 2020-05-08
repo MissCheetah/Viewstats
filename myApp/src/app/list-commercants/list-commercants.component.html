@@ -1,0 +1,16 @@
+<ion-content fullscreen>
+  <ion-card *ngFor="let commercant of commercants; let i = index">
+  <img src="{{commercant.imgsrc}}" />
+  <ion-card-header>
+    <ion-card-subtitle>Détail du commerçant</ion-card-subtitle>
+    <ion-card-title>{{commercant.prenom}} {{commercant.nom}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{commercant.prenom}} {{commercant.nom}} est commerçant dans le secteur <strong>{{commercant.secteur}}</strong>.
+    <br>
+    Revenu journalier : <strong>{{commercant.revenu_journalier}} € par jour</strong>
+    <br>
+    Lieu d'activité : {{commercant.code_postal}}, {{commercant.ville}}
+  </ion-card-content>
+</ion-card>
+</ion-content>

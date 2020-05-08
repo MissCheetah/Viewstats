@@ -1,0 +1,45 @@
+<section id="LoginForm">
+  <div class="container">
+
+  <div class="login-form">
+  <div class="main-div">
+      <div class="panel">
+     <h2>Login</h2>
+     <p>Please enter your email and password</p>
+     </div>
+      <form id="Login" (ngSubmit)="login()">
+            <div class="form-group">
+
+                   <select required class="form-control" type="profile" class="form-control" [(ngModel)]="profile" #emailInput="ngModel" [ngModelOptions]="{standalone: true}">
+                        <option value="" disabled selected>Select Profile</option>
+                        <option value="admin">Administrateur</option>
+                       <option value="manager">Manager</option>
+                   </select>
+
+
+                </div>
+
+          <div class="form-group" id="email_form">
+
+
+              <input required type="email" class="form-control" placeholder="Email Address" [(ngModel)]="email" #emailInput="ngModel" [ngModelOptions]="{standalone: true}">
+
+          </div>
+
+          <div class="form-group" id="password_form">
+
+              <input required type="password" class="form-control" placeholder="Password" [(ngModel)]="password" #emailInput="ngModel" [ngModelOptions]="{standalone: true}">
+
+          </div>
+          <div class="forgot">
+          <a href="reset.html">Forgot password?</a>
+  </div>
+          <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+
+      </form>
+      </div>
+  <p class="botto-text"> All rights to Manthiata Sakho</p>
+  </div></div>
+
+
+</section>

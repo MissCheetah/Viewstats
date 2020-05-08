@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "admin",
+    "database": "Viewstats",
+    "host": "localhost:8889",
+    "dialect": "mysql",
+    "timestamps": false,
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials" : true,
+    "Access-Control-Allow-Headers": "content-type",
+    "dialectOptions": {
+      "requestTimeout": 300000,
+      "encrypt": false
+
+    }
+  }
+}

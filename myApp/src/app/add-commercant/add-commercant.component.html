@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<ion-content fullscreen >
+<form (ngSubmit)="logForm()" *ngIf="clear" >
+  <ion-item>
+    <ion-button (click)="uploadImage()" >Upload</ion-button>
+  <img src="{{image}}">
+  </ion-item>
+  <ion-item>
+    <ion-label>Prénom : </ion-label>
+    <ion-input type="text" [(ngModel)]="newCommercant.prenom" name="prenom"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nom : </ion-label>
+    <ion-textarea [(ngModel)]="newCommercant.nom" name="nom"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Secteur d'activité : </ion-label>
+    <ion-textarea [(ngModel)]="newCommercant.secteur" name="secteur"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Revenu journalier (€ / jour) : </ion-label>
+    <ion-textarea [(ngModel)]="newCommercant.revenu_journalier" name="revenu-journalier"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Ville : </ion-label>
+    <ion-textarea [(ngModel)]="newCommercant.ville" name="ville"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Code Postal : </ion-label>
+    <ion-textarea [(ngModel)]="newCommercant.code_postal" name="code_postal"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email Agent : </ion-label>
+    <ion-textarea [(ngModel)]="newCommercant.agent_email" name="agent_email"></ion-textarea>
+  </ion-item>
+
+  <button ion-button class="btn btn-primary" type="submit" block>Ajouter un commerçant</button>
+</form>
+
+<div class="added" *ngIf="added">
+  Félicitations ! Le nouveau commerçant a bien été ajouté à votre liste de rattachements.
+  <p> </p>
+  <button ion-button class="btn btn-primary" (click)="refresh()">Retour</button>
+</div>
+</ion-content>

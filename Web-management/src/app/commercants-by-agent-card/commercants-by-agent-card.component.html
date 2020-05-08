@@ -1,0 +1,39 @@
+
+
+<div id="card-commercants-modal" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Liste des commerçants enregristrés par {{Agent.prenom}} {{Agent.nom}}</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="container" >
+                  <div class="row">
+            <div class="col-12 col-sm-8 col-lg-5">
+              <h6 class="text-muted">Liste des commerçants enregistrés par {{Agent.prenom}} {{Agent.nom}}</h6>
+              <ul class="list-group" *ngFor="let commercant of CommercantsByAgent; let i = index">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <strong>{{commercant.prenom}} {{commercant.nom}}</strong>
+                  <br> Secteur d'activité: {{commercant.secteur}}
+                  <br> Lieu d'activité : {{commercant.code_postal}}, à {{commercant.ville}}
+                  <br> Revenu journalier de {{commercant.revenu_journalier}} € par jour
+
+                  <div class="image-parent">
+                    <img src="{{commercant.imgsrc}}" class="img-fluid" alt="quixote">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+            </div>
+        </div>
+</div>
+
